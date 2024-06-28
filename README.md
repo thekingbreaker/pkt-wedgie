@@ -31,9 +31,3 @@ Once its up and running, wait a bit and you should see something like screenshot
 
 ![Alt text](console_1.png?raw=true "example output of uploading fake annnouncements to pool")
 
-
-# pkt-wedgie - Hardnonce Bypass / Fake Announcement Production
-
-Audit Report + Demonstration code for flaw found in the PKT Blockchain
-
-password:   thekingbreakeraud1t5
