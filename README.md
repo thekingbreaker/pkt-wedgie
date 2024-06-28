@@ -14,7 +14,7 @@ implementation. In order to search for valid announcements, the miner needs to p
 ![Alt text](diag_1.png?raw=true "diagram of announcement mining process")
 
 In the diagram below we can see how mining algorithm can be abused to create high volume of fake
-announcements. With this setup all threads only need a single hard work. The hard nonce value is
+announcements. With this setup all threads only need a single hard round. The hard nonce value is
 no longer used - it can be set to whatever value the miner wants.
 
 ![Alt text](diag_2.png?raw=true "diagram of announcement mining process using mentioned flaw")
@@ -22,6 +22,7 @@ no longer used - it can be set to whatever value the miner wants.
 This report comes along with sourcecode (src.7z release) that demonstrates this flaw in a live environment. The
 sourcecode is a modified version of packetcrypt-rs, it has been tweaked to make it easier to see how the flaw can be
 implemented.
+
 To build:
 ```bash
 CC=clang cargo –release –features jemalloc –features jit
