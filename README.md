@@ -22,10 +22,16 @@ no longer used - it can be set to whatever value the miner wants.
 This report comes along with sourcecode (pkt-wedgie) that demonstrates this flaw in a live environment. The
 sourcecode is a modified version of packetcrypt-rs, it has been tweaked to make it easier to see how the flaw can be
 implemented.
-To build
+To build:
+```bash
 CC=clang cargo –release –features jemalloc –features jit
+```
+
 To run
+```bash
 ./target/release/packetcrypt ann http://pool.pkt.world/2048 –paymentaddr <your wallet here>
+```
+
 At a worktarget of 2048 it should start creating fake announcements fairly quickly.
 Once its up and running, wait a bit and you should see something like screenshot below:
 
