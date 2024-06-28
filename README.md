@@ -19,7 +19,7 @@ no longer used - it can be set to whatever value the miner wants.
 
 ![Alt text](diag_2.png?raw=true "diagram of announcement mining process using mentioned flaw")
 
-This report comes along with sourcecode (pkt-wedgie) that demonstrates this flaw in a live environment. The
+This report comes along with sourcecode (src.7z release) that demonstrates this flaw in a live environment. The
 sourcecode is a modified version of packetcrypt-rs, it has been tweaked to make it easier to see how the flaw can be
 implemented.
 To build:
