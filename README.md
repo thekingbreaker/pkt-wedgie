@@ -8,10 +8,17 @@ part. It allows a miner to produce higher volume as well as fake announcements, 
 blockchain consensus. In theory, should be fairly trivial for a cloud miner/carder to create their own private pool to take
 advantage of the higher volume of fake announcements. They can internal mine using a very low work target. It is also
 possible to create fake announcements at extremely high work targets, but the volume will be smaller.
+
 Please refer to diagram below which shows how normal operation works using the standard packetcrypt-rs
-implementation. In order to search for valid announcements, the miner needs to perform hard + soft work per thread.
+implementation. In order to search for valid announcements, the miner needs to perform hard round + soft round per thread.
 
 ![Alt text](diag_1.png?raw=true "diagram of announcement mining process")
+
+The hard round involves building a merkle tree containing 8192 randhash items.  
+This is performed for every new soft round, adding a throttle to the amount of announcements a miner can produce.  
+The issue with this design is that the block miner blindly accepts whatever merkle root hash that the announcement miner provides.
+The announcement miner can fake the 8192 items.  In this demonstration we simply modify one item every round in order to force a new merkle root hash.
+This means the previously computed randhash items can be recycled (free) - only need to rebuild the merkle tree.
 
 In the diagram below we can see how mining algorithm can be abused to create high volume of fake
 announcements. With this setup all threads only need a single hard round. The hard nonce value is
