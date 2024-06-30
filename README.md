@@ -32,12 +32,12 @@ implemented.
 
 To build:
 ```bash
-CC=clang cargo -–release –-features jemalloc -–features jit
+CC=clang cargo --release --features jemalloc --features jit
 ```
 
 To run
 ```bash
-./target/release/packetcrypt ann http://pool.pkt.world/master/2048 -–paymentaddr <your wallet here>
+./target/release/packetcrypt ann http://pool.pkt.world/master/2048 --paymentaddr <your wallet here>
 ```
 
 At a worktarget of 2048 it should start creating fake announcements fairly quickly.
